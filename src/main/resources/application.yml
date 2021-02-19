@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bugcatcher?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: admin
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .mustache
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 256260587470-h8tddd6vffkma8t5a7hf7vs9u4cg094f.apps.googleusercontent.com
+            client-secret: goAe6_Cy3mTqxtnRrTncTQRE
+            scope:
+              - email
+              - profile
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+<body>
+<h1>회원가입 페이지</h1>
+<form action="/doJoin" method="POST">
+    <input type="text" name="id" placeholder="아이디"><br>
+    <input type="password" name="password" placeholder="비밀번호"><br>
+    <input type="text" name="name" placeholder="이름"><br>
+    <select name="gender">
+        <option value="Male">남자</option>
+        <option value="Female">여자</option>
+    </select><br>
+    <input type="text" name="phone" placeholder="전화번호"><br>
+    <input type="email" name="email" placeholder="이메일"><br>
+    <input name="${_csrf.parameterName}" type="hidden" value="${_crsf.token}">
+    <button>회원가입</button>
+</form>
+</body>
+</html>
