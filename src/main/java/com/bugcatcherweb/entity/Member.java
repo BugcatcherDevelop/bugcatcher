@@ -1,6 +1,9 @@
 package com.bugcatcherweb.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
@@ -10,14 +13,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Timestamp;
 
+@Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Member {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx; // 고유값
     @Column
-    private String id; // 아이디
+    private String username; // 아이디
     @Column
     private String password; // 비밀번호
     @Column
@@ -47,4 +53,5 @@ public class Member {
     @Column
     @CreationTimestamp
     private Timestamp password_change_date; // 패스워드 변경 날짜
+
 }
